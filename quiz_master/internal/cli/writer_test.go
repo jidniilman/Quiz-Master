@@ -1,7 +1,7 @@
 package cli
 
 import (
-	"io/ioutil"
+	"io"
 	"os"
 	"strings"
 	"testing"
@@ -21,7 +21,7 @@ func TestDisplayVersion(t *testing.T) {
 	// Close writer
 	w.Close()
 	// Read []byte data from reader
-	out, _ := ioutil.ReadAll(r)
+	out, _ := io.ReadAll(r)
 	os.Stdout = rescueStdout
 
 	if strings.TrimSpace(string(out)) != "Quiz Master version 1.0.0. By: Jidni Ilman" {
