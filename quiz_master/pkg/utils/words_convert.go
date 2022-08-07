@@ -123,7 +123,7 @@ func CombineHundredLower(eachNumber []int, result *[]int) {
 			eachNumber[i-1] < eachNumber[i] {
 			merged := eachNumber[i-1] * eachNumber[i]
 			// But hundred have optional suffix
-			if eachNumber[i] > eachNumber[i+1] && i < len(eachNumber)-1 {
+			if i < len(eachNumber)-1 && eachNumber[i] > eachNumber[i+1] {
 				merged += eachNumber[i+1]
 				i++
 			}

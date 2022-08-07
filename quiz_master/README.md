@@ -1,4 +1,6 @@
 # Quiz-Master
+[![wakatime](https://wakatime.com/badge/user/90095cec-bff0-4e71-9e19-19fbac89fb11/project/9a69d0dd-130c-49b6-93ab-2a629bd2b36b.svg)](https://wakatime.com/badge/user/90095cec-bff0-4e71-9e19-19fbac89fb11/project/9a69d0dd-130c-49b6-93ab-2a629bd2b36b)
+----
 Quiz Master is Quipper’s Technical Exam for Backend Engineer - Web
 
 ## Overview
@@ -11,26 +13,49 @@ Quiz Master is Quipper’s Technical Exam for Backend Engineer - Web
 - [x] App Functionality
 - [x] Push to Github for first time
 - [ ] Cleanup Readme
-- [ ] Write Unit Tests
+- [x] Write Unit Tests
 - [ ] Write UNIX Executable Script `/bin/setup` and `/bin/quiz_master`
 - [ ] Implement GitHub Actions
-- [ ] Write proper documentation
+- [x] Write proper documentation
 - [ ] Implement Golang CI Lint
-- [ ] Write Benchmark
+- [x] Write Benchmark
 
 ## Tech used
 - Go Modules
 - Makefile (todo)
 
 ## Library Used
-Use own logic as much as possible
+Use own logic as much as possible. everything else is self-made.
+- [Testify](https://github.com/stretchr/testify) for Unit Testing purpose
 
 ## Coding Convention
-TBD
+Golang is strict by default. But we are using some guidelines from :
+- [Effective Go](https://go.dev/doc/effective_go)
+- [CockroachDB Engineering Standards](https://wiki.crdb.io/wiki/spaces/CRDB/pages/181371303/Go+Golang+coding+guidelines)
+- GoLand IDE formatting
 
 ## Unit Tests
+Mainly for our unit testing, we are using table driven test approach. But we are using little sample to do our tests.
+
+Run all unit tests with `go test ./...` or `go test -v ./...` with verbose output.
+You can run individual unit test with `go test -v <package-name>`.
+
+Package Name (main entrypoint are excluded):
+```
+jidniilman/quiz-master/internal/cli      # Handling CLI application and execution
+jidniilman/quiz-master/internal/question # Our question model
+jidniilman/quiz-master/pkg/command       # Our data communication protocol
+jidniilman/quiz-master/pkg/utils         # Some useful helpers
+```
+To see full package list, use `go list ./...`
 
 ## Benchmark
+Only `/pkg/command` and `/pkg/utils` that have benchmark.
+
+Run benchmark with:
+```
+go test -v ./... -bench=. -benchmem
+```
 
 ## Project Layout/Structure
 In this project, I'm using the layout standards from [Standard Go Project Layout](https://github.com/golang-standards/project-layout).

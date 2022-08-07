@@ -1,8 +1,6 @@
 package question
 
-import (
-	"jidniilman/quiz-master/pkg/utils"
-)
+import "jidniilman/quiz-master/pkg/utils"
 
 // Question consist of ID (Number), Question, and Answer. The data type is not generic.
 type Question struct {

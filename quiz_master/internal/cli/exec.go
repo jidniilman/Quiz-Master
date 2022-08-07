@@ -24,8 +24,8 @@ func ExecCreateOrUpdateQuestion(create bool, cmd *command.Command) {
 			return
 		}
 		fmt.Printf("Question Number %d is created:\n", q.ID)
-		fmt.Printf("Q:%s \n", q.Question)
-		fmt.Printf("A:%d \n", q.Answer)
+		fmt.Printf("Q: %s \n", q.Question)
+		fmt.Printf("A: %d \n", q.Answer)
 		return
 	}
 	// This is for Update Question, check if it's exist first
@@ -35,8 +35,8 @@ func ExecCreateOrUpdateQuestion(create bool, cmd *command.Command) {
 			return
 		}
 		fmt.Printf("Question Number %d is updated:\n", q.ID)
-		fmt.Printf("Q:%s \n", q.Question)
-		fmt.Printf("A:%d \n", q.Answer)
+		fmt.Printf("Q: %s \n", q.Question)
+		fmt.Printf("A: %d \n", q.Answer)
 		return
 	}
 	if create == true {
