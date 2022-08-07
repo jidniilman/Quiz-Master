@@ -1,3 +1,4 @@
+// Package command provide communication protocol between user, business, and data layer
 package command
 
 type Command struct {

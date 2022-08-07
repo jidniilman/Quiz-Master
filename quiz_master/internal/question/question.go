@@ -1,3 +1,4 @@
+// Package question provide data model for quiz_master
 package question
 
 import "jidniilman/quiz-master/pkg/utils"

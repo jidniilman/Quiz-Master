@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export CGO_ENABLED=0
+export GOOS=linux
+export GOARCH=amd64
+
+# Download all Dependencies
+(cd quiz_master && go mod download)
+
+# Build
+(cd quiz_master && go build ./...)
+
+# Run Test
+(cd quiz_master && go test -v ./...)
