@@ -1,7 +1,7 @@
 # Quiz-Master
 [![wakatime](https://wakatime.com/badge/user/90095cec-bff0-4e71-9e19-19fbac89fb11/project/9a69d0dd-130c-49b6-93ab-2a629bd2b36b.svg)](https://wakatime.com/badge/user/90095cec-bff0-4e71-9e19-19fbac89fb11/project/9a69d0dd-130c-49b6-93ab-2a629bd2b36b)
 ![Golang CI Lint](https://github.com/jidniilman/Quiz-Master/actions/workflows/golangci-lint.yml/badge.svg)
-
+[![go-ci](https://github.com/jidniilman/Quiz-Master/actions/workflows/go-ci.yml/badge.svg)](https://github.com/jidniilman/Quiz-Master/actions/workflows/go-ci.yml)
 ----
 Quiz Master is Quipper’s Technical Exam for Backend Engineer - Web
 
@@ -18,9 +18,9 @@ Quiz Master is Quipper’s Technical Exam for Backend Engineer - Web
 - [ ] Cleanup Readme
 - [x] Write Unit Tests
 - [ ] Write UNIX Executable Script `/bin/setup` and `/bin/quiz_master`
-- [ ] Implement GitHub Actions
+- [x] Implement GitHub Actions
 - [x] Write proper documentation
-- [ ] Implement Golang CI Lint
+- [x] Implement Golang CI Lint
 - [x] Write Benchmark
 
 ## Tech used
