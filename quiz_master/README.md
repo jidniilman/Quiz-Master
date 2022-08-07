@@ -15,7 +15,7 @@ Quiz Master is Quipper’s Technical Exam for Backend Engineer - Web
 
 ## Checklist
 - [x] App Functionality
-- [x] Push to Github for first time
+- [x] Push to GitHub for first time
 - [x] Cleanup Readme
 - [x] Write Unit Tests
 - [x] Write UNIX Executable Script `/bin/setup` and `/bin/quiz_master`
@@ -108,7 +108,7 @@ go list ./...
 ```
 
 ## Benchmark
-Only `/pkg/command` and `/pkg/utils` that have benchmark. We can do benchmark for `/internal` but it is not necessary.
+Only `/pkg/command` and `/pkg/utils` that have benchmarked. We can do benchmark for `/internal` but it is not necessary.
 
 Run benchmark with:
 ```
@@ -116,8 +116,8 @@ go test -v ./... -bench=. -benchmem
 ```
 
 ## Project Layout/Structure
-In this project, I'm using the layout standards from [Standard Go Project Layout](https://github.com/golang-standards/project-layout).
-I remove some of unused folders such as: `/api`, `/web`, `/deployments`, `/test`, `/configs`, `/docs`, and `/build`
+In this project, we are using the layout standards from [Standard Go Project Layout](https://github.com/golang-standards/project-layout).
+We removed some of unused folders such as: `/api`, `/web`, `/deployments`, `/test`, `/configs`, `/docs`, and `/build`
 
 ### `/cmd`
 Main applications for this project. The directory name for each application match the name of the executable (e.g., `/cmd/quiz_master`).
@@ -177,7 +177,7 @@ We provide two-stage build docker image for you.
 
 Build docker with:
 ```
-docker build -t jidniilman/quiz-master .
+docker build -t jidniilman/quiz-master:latest .
 ```
 See created docker images with:
 ```
