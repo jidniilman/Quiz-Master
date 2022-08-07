@@ -16,7 +16,7 @@ func GetArgs(str string) Command {
 	var argRunes = make([]rune, 0)
 
 	for _, char := range str {
-		if char == ' ' && isQuotedRune == false {
+		if char == ' ' && !isQuotedRune {
 			args = append(args, string(argRunes))
 			argRunes = argRunes[:0]
 			continue

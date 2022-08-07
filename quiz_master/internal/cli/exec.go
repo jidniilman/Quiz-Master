@@ -16,7 +16,7 @@ func ExecCreateOrUpdateQuestion(create bool, cmd *command.Command) {
 		return
 	}
 	// This is for Create Question, check if it's exist first
-	if exist := q.IsQuestionExist(); exist == false && create == true {
+	if exist := q.IsQuestionExist(); !exist && create {
 		// Create Question mean we store our built question into data store blindly, and
 		// we don't know what the data store is from this layer
 		if err := q.CreateOrUpdateQuestion(); err != nil {
@@ -29,7 +29,7 @@ func ExecCreateOrUpdateQuestion(create bool, cmd *command.Command) {
 		return
 	}
 	// This is for Update Question, check if it's exist first
-	if exist := q.IsQuestionExist(); exist == true && create == false {
+	if exist := q.IsQuestionExist(); exist && !create {
 		if err := q.CreateOrUpdateQuestion(); err != nil {
 			fmt.Println(err)
 			return
@@ -39,11 +39,11 @@ func ExecCreateOrUpdateQuestion(create bool, cmd *command.Command) {
 		fmt.Printf("A: %d \n", q.Answer)
 		return
 	}
-	if create == true {
+	if create {
 		fmt.Printf("Sorry Question with Number %d already exist\n", q.ID)
 		return
 	}
-	if create == false {
+	if !create {
 		fmt.Printf("Sorry Question with Number %d not exist\n", q.ID)
 		return
 	}
@@ -58,7 +58,7 @@ func ExecDeleteQuestion(cmd *command.Command) {
 		fmt.Println(err)
 		return
 	}
-	if exist := q.IsQuestionExist(); exist == true {
+	if exist := q.IsQuestionExist(); exist {
 		q.DeleteQuestion()
 		fmt.Printf("Question Number %d was deleted!\n", q.ID)
 		return
@@ -75,7 +75,7 @@ func ExecReadQuestion(cmd *command.Command) {
 		fmt.Println(err)
 		return
 	}
-	if exist := q.IsQuestionExist(); exist == true {
+	if exist := q.IsQuestionExist(); exist {
 		q.ReadQuestion()
 		fmt.Println("Q:", q.Question)
 		fmt.Println("A:", q.Answer)
@@ -101,9 +101,9 @@ func ExecAnswerQuestion(cmd *command.Command) {
 		fmt.Println(err)
 		return
 	}
-	if exist := q.IsQuestionExist(); exist == true {
+	if exist := q.IsQuestionExist(); exist {
 		isAnswerTrue := q.AnswerQuestion()
-		if isAnswerTrue == true {
+		if isAnswerTrue {
 			fmt.Println("Your answer is Correct!")
 			return
 		}

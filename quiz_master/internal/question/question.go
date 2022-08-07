@@ -63,8 +63,5 @@ func BrowseQuestions() []Question {
 
 // AnswerQuestion is just a quick comparison check between given answer and question answer from our data store by ID
 func (q *Question) AnswerQuestion() bool {
-	if q.Answer == questions[q.ID].Answer {
-		return true
-	}
-	return false
+	return q.Answer == questions[q.ID].Answer
 }

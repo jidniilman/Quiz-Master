@@ -1,5 +1,7 @@
 # Quiz-Master
 [![wakatime](https://wakatime.com/badge/user/90095cec-bff0-4e71-9e19-19fbac89fb11/project/9a69d0dd-130c-49b6-93ab-2a629bd2b36b.svg)](https://wakatime.com/badge/user/90095cec-bff0-4e71-9e19-19fbac89fb11/project/9a69d0dd-130c-49b6-93ab-2a629bd2b36b)
+![Golang CI Lint](https://github.com/jidniilman/Quiz-Master/actions/workflows/golangci-lint.yml/badge.svg)
+
 ----
 Quiz Master is Quipper’s Technical Exam for Backend Engineer - Web
 
@@ -8,6 +10,7 @@ Quiz Master is Quipper’s Technical Exam for Backend Engineer - Web
 - This project built with Go 1.19
 - This project init by Linux (Ubuntu WSL2 on Windows)
 - This project developed and coded with Windows 10
+- Detailed time elapsed to write this project can be found [here (WakaTime)](https://wakatime.com/@deraven/projects/qstzzolwiz?start=2022-08-02&end=2022-08-08) 
 
 ## Todo
 - [x] App Functionality
@@ -32,6 +35,7 @@ Use own logic as much as possible. everything else is self-made.
 Golang is strict by default. But we are using some guidelines from :
 - [Effective Go](https://go.dev/doc/effective_go)
 - [CockroachDB Engineering Standards](https://wiki.crdb.io/wiki/spaces/CRDB/pages/181371303/Go+Golang+coding+guidelines)
+- [Golang CI Lint](https://golangci-lint.run/)
 - GoLand IDE formatting
 
 ## Unit Tests
@@ -100,3 +104,20 @@ Install godoc first (godoc isn't included in version `>=1.13`)
 go install golang.org/x/tools/cmd/godoc@latest
 ```
 Run it directly with `godoc -http:6060`. And open this [link](http://localhost:6060/pkg/jidniilman/quiz-master/?m=all)
+
+## Golang CI Lint
+Golang CI Lint is included with GitHub Actions.
+
+But if you want to lint locally, Install Golang CI Lint first:
+```
+# binary will be $(go env GOPATH)/bin/golangci-lint
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin 
+
+# test it
+golangci-lint --version
+```
+Run lint with:
+```
+golangci-lint run
+```
+Check [https://golangci-lint.run/](https://golangci-lint.run/) for more commands and usages.
